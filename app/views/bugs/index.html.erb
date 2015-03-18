@@ -1,0 +1,43 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<span class="btn">
+	<%= link_to 'New Bug', new_bug_path, remote: true %>
+</span>
+
+<h1>Lists of all Bugs</h1>
+<!--
+<table>
+	<thead>
+  		<tr>
+		    <th>Title</th>
+		    <th>Issue Type</th>
+		    <th>Priority</th>
+		    <th>Status</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+  		</tr>
+  	</thead>
+	  
+	<tbody>
+		<% @bugs.each do |bug| %>
+		  <tr class="<%= cycle('odd', 'even') -%>">
+		    <td><b><%= bug.title %></b> <i>Reported By <%= (bug.user.try(:fname) || "NA") %> <%= (bug.user.try(:lname) || "NA")%></i><br><%= bug.description %></td>
+		    <td><%= bug.issue_type %></td>
+		    <td><%= bug.priority %></td>
+		    <td><%= bug.status %></td>
+		    <td><%= link_to 'Show', bug %></td>
+		    <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+		    <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
+-->
+<div id="bugs">
+	<%= render @bugs %>
+</div>
+		
+<div id="blog-form" style="display:none;"></div>

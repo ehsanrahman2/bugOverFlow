@@ -1,0 +1,42 @@
+// Place all the styles related to the Bugs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bugs {
+
+	.article {
+		margin-bottom: 20px;
+	}
+
+	.article_title {
+		font-size: 120%;
+		font-weight: bold;
+	}
+	
+	.article_info {
+		font-style: italic;
+	}
+
+	.author {
+		font-weight: bold;	
+	}
+
+	.article_text {
+		width: 75%;
+		margin-top: 5px;
+	}
+	
+	.list_actions {
+		font-size: x-small;
+		text-align: right;
+		padding-left: 1em;
+	}
+	
+	.list_line_even {
+		background: #FFFFFF;
+	}
+	
+	.list_line_add {
+		background: #aaae8e;
+	}
+}

@@ -1,0 +1,38 @@
+<% if bug == @current_bug %>
+	<div id="current_bug" class="article">
+<% else %>
+	<div class="article">
+<% end %>
+  
+<div class="article_title"> <%= bug.title %> </div>
+  <div class="article_info">
+    <span class="date"> <%= bug.updated_at.to_formatted_s(:long_ordinal) %> </span>
+    <span class="author"> By <%= (bug.user.try(:fname) || "NA") %> <%= (bug.user.try(:lname) || "NA")%> </span>
+    <span class="date">Issue Type: </span>
+    <span class="author"><%= bug.issue_type %></span>
+    <span class="date">Priority: </span>
+    <span class="author"><%= bug.priority %></span>
+    <span class="date">Status: </span>
+    <span class="author"><%= bug.status %></span>    
+  </div>
+  <div class="article_text"> <%= bug.description %> </div>
+  <div class="actions">
+    <%= link_to 'Show', bug %>
+    <%= link_to 'Edit', edit_bug_path(bug), remote: true %>
+    <%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+  </div>
+</div>
+
+<!--
+		<% @bugs.each do |bug| %>
+		  <tr class="<%= cycle('odd', 'even') -%>">
+		    <td><b><%= bug.title %></b> <i>Reported By <%= (bug.user.try(:fname) || "NA") %> <%= (bug.user.try(:lname) || "NA")%></i><br><%= bug.description %></td>
+		    <td><%= bug.issue_type %></td>
+		    <td><%= bug.priority %></td>
+		    <td><%= bug.status %></td>
+		    <td><%= link_to 'Show', bug %></td>
+		    <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
+		    <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		  </tr>
+		<% end %>
+-->		

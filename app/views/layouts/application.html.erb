@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BugReportingApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body class="<%= controller.controller_name %>">
+
+	<div id="banner">
+		<div id="img">
+			<%= image_tag("bugs.png", :alt => "rss feed") %>
+		</div>
+		
+		<%= @page_title || "Bug Tracking!" %>
+	</div>
+	
+	<div id="columns">
+		<div id="side">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/users">Users</a></li>
+				<li><a href="/bugs">Bugs</a></li>
+				<li><a href="/contacts/new">Contact Us</a></li>
+			</ul>
+		</div>
+	
+		<div id="main">
+			<%= yield %>
+		</div>
+	</div>
+</body>
+</html>
